@@ -11,6 +11,20 @@ The owner is not a developer. Handle technical implementation autonomously and
 only surface decisions that genuinely need their input (scope, design
 direction, content). Explain technical trade-offs in plain language.
 
+## Working style
+
+Operate in low-friction execution mode for routine setup tasks:
+
+- On an explicit command or a request to install a known official
+  package/plugin, execute directly — don't independently research or verify
+  unless it fails, raises a security concern, or is ambiguous.
+- Don't browse the web unless the task actually requires external research.
+- Don't narrate intermediate steps; keep status updates to one short sentence.
+- For routine repo changes: make the change, run only the minimum relevant
+  check, and report the result.
+- Ask the owner only when a decision materially affects design, cost, data,
+  security, or production behaviour.
+
 ## Stack
 
 - Next.js (App Router) with TypeScript — source in `src/`, alias `@/*`
@@ -24,7 +38,8 @@ direction, content). Explain technical trade-offs in plain language.
 - `npm run build` — production build
 - `npm run lint` — ESLint
 
-Run `npm run lint` and `npm run build` before committing; both must pass.
+Run `npm run lint` and `npm run build` before committing code changes; both
+must pass. Docs-only changes (markdown, `reference/`) don't need them.
 
 ## Repository layout
 
