@@ -44,4 +44,33 @@ Run `npm run lint` and `npm run build` before committing; both must pass.
   `reference/SOURCES.md`.
 - The site is marked `noindex` in metadata — keep it that way while private.
 
+## Low-friction execution
+
+The owner uses Claude as an implementation agent and wants to minimise
+unnecessary token use and tool calls.
+
+For routine, reversible development tasks:
+
+- Execute directly rather than researching the instruction first.
+- Do not browse the web to verify packages, commands, or tools the owner
+  explicitly asks you to use unless the command fails or there is a genuine
+  security concern.
+- Do not narrate routine intermediate steps.
+- Keep progress updates extremely brief.
+- Do not inspect unrelated repository state.
+- Do not run elaborate smoke tests unless needed to establish that something
+  works.
+- Do not repeat checks that have already passed unless relevant files changed.
+- Run lint/build only when application code, dependencies, configuration
+  affecting the build, or deployment behaviour changed.
+- Documentation-only changes do not require lint/build.
+- Prefer the minimum number of tool calls necessary to complete the task.
+- Do not add documentation or log decisions for trivial implementation details
+  unless they materially affect future development.
+- Ask the owner only about decisions affecting design, functionality, cost,
+  security, patient data, production behaviour, or business requirements.
+
+When the owner provides an explicit implementation instruction, treat it as
+authorised and proceed unless it is unsafe or impossible.
+
 @AGENTS.md
