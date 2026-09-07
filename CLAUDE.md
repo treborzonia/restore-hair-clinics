@@ -24,7 +24,10 @@ direction, content). Explain technical trade-offs in plain language.
 - `npm run build` — production build
 - `npm run lint` — ESLint
 
-Run `npm run lint` and `npm run build` before committing; both must pass.
+Run `npm run lint` and `npm run build` before committing only when the change
+touches application code, dependencies, build-affecting configuration, or
+deployment behaviour; both must pass in those cases. Documentation-only
+changes do not require lint/build.
 
 ## Repository layout
 
